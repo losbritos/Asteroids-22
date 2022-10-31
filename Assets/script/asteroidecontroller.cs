@@ -6,6 +6,7 @@ public class asteroidecontroller : MonoBehaviour
 {
     public float speed_min;
     public float speed_max;
+    
     Rigidbody2D rb;
     public AsteroidManager manager;
     // Start is called before the first frame update
@@ -35,12 +36,14 @@ public class asteroidecontroller : MonoBehaviour
             GameObject temp2 = Instantiate(manager.asteroide, transform.position, transform.rotation);
             temp2.GetComponent<asteroidecontroller>().manager = manager;
             temp2.transform.localScale = transform.localScale * 0.5f;
+
+           
         }
 
         gamemanager.instance.puntuacion += 100;
         manager.asteroides -= 1;
 
-
+        
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)

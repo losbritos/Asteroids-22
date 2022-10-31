@@ -21,7 +21,9 @@ public class UImanager : MonoBehaviour
     void Update()
     {
         tiempo.text = Time.time.ToString("00.00");
-        if(gamemanager.instance.vidas <= 0)
+        puntuacion.text = gamemanager.instance.puntuacion.ToString("");
+        vidas.text = gamemanager.instance.vidas.ToString("");
+        if (gamemanager.instance.vidas <= 0)
         {
             gameover.SetActive(true);
         }

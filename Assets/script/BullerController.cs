@@ -5,6 +5,7 @@ using UnityEngine;
 public class BullerController : MonoBehaviour
 {
     public float speed = 10;
+    
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -25,6 +26,12 @@ public class BullerController : MonoBehaviour
         if(collision.tag == "Asteroid")
         {
             collision.gameObject.GetComponent<asteroidecontroller>().Muerte();
+            Destroy(gameObject);
+        }
+
+        if (collision.tag == "enemigo")
+        {
+            collision.gameObject.GetComponent<enemigocontroller>().muerte();
             Destroy(gameObject);
         }
     }
